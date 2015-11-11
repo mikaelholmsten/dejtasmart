@@ -1,0 +1,257 @@
+
+$standard:#ff4d6c; /* standard färg variab */
+
+@mixin header-style { /*mixin */
+  
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color:$standard;
+    text-align:center;
+        
+}
+
+.box1 {
+    display: block;
+        order: 1}
+.box2 {order: -2}
+.box3 {order: -3}
+
+h1, h4
+    {
+        @include header-style;
+        color: $standard+245%;
+    }
+
+
+@mixin footstyle 
+    {
+
+        font-size: 1.2em;
+        display: block;
+        position:fixed;
+        bottom:-12px;
+        height:30px;
+        width:100%;
+        background-color:black;
+        text-align: center;
+        color:$standard;
+    }
+
+footer 
+    {
+        @include footstyle;
+    }
+
+aside
+    {        
+        display: flex;
+        opacity:0.5;
+        background-color: white;
+        border: 2px solid brown;
+        padding:2px;
+        color:black;
+        text-align: center;
+    }
+
+.medlem-text
+    {
+        font-size: 1.1em;
+        color: $standard+125%;
+        text-align:center;
+        }
+
+
+.medlem
+    {
+        
+        color: $standard;
+        background: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 2em;
+        display: inline-block;
+    }
+.ejmedlem
+    {
+        color: black;
+        background: white;
+        opacity:0.95;
+        text-decoration: none;
+        padding: 50px;
+        display: inline-block;
+        font-size: 4em;
+    }
+body 
+    { 
+        background-image: url("../images/background.jpg")	;	
+    	background-position: center center;
+		background-repeat:  no-repeat;
+		background-attachment: fixed;
+		background-size:  cover;
+		background-color: white;
+    }
+
+
+ul,
+li {
+  list-style: none;
+}
+
+
+header {
+  display: flex;
+  justify-content: center
+  
+}
+
+.fa-life-bouy,
+.fa-glass,
+.fa-home,
+.fa-facebook,
+.fa-cutlery {
+  font-size: 1em;
+  padding: 0.8em;
+}
+
+.logo {
+  display: center;
+  align-items: baseline;
+}
+
+h1,
+h2 {
+  color: white;
+  font-size: 2em;
+  color: pink;
+    }
+
+
+.fa-times,
+.fa-bars {
+  color: white;
+  font-size: 3em;
+  padding: 0.5em;
+}
+
+#nav-toggle {
+  display: none; /* dölj ch */
+}
+
+
+#nav-toggle:checked + #wrapper nav {
+  display: block; /* mobil meny cb checkad */
+    
+    
+    
+}
+
+#nav-toggle:checked + #wrapper header .fa-bars {
+  display: block; /* visar hamburg ch checkad */
+
+}
+
+
+nav {
+  display: none; /* dold mobilmeny */
+
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f89090;
+  display: flex;
+  flex-flow: column wrap; /* mobil meny kolumn*/
+
+}
+
+nav ul a {
+  font-size: 2em;
+  display: block;
+  padding: 0.4em;
+}
+
+nav > ul > li:hover > a {
+  background: #e4e4e4;
+  color: #92b4f2;
+}
+
+.search-form {
+  display: none;
+}
+
+@media all and (min-width: 630px) {
+  /* Döljer meny trigger för desktop */
+  
+  header > label {
+    display: none;
+  }
+  /* visar menyn för desktop */
+  
+  nav {
+    display: block;
+  }
+  nav ul {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .fa-life-bouy,
+.fa-glass,
+.fa-home,
+.fa-facebook,
+.fa-cutlery {
+    font-size: 3em;
+    padding: 0.5em;
+  }
+  h1, h2, h4
+    {
+        @include header-style;
+        color: $standard+45%;
+        font-size: +25%;
+    }
+  .search-form {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    order:99;
+  }
+  .search {
+    padding: 8px 15px;
+    background: #e0e0f5;
+    border: 0px solid #dbdbdb;
+    color: white;
+  }
+  .button {
+    position: relative;
+    padding: 6px 15px;
+    left: -8px;
+    border: 2px solid #207cca;
+    background-color: #207cca;
+    color: #fafafa;
+  }
+    
+    .ejmedlem
+    {
+        color: black;
+        background: white;
+        opacity:0.91;
+        text-decoration: none;
+        font-size: 2em;
+        padding: 2px;
+        display: inline-block;
+    }
+    .box2 {display: flex;
+        order: 1}
+    .box3
+    {
+        display: flex;
+    order: 2;
+    }
+    
+    
+    
+}
