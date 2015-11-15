@@ -15,7 +15,9 @@ var merge = require('merge-stream');
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
+	  index: 'index.html'
+	  
     }
   });
 });

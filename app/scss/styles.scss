@@ -11,16 +11,18 @@ $standard:#ff4d6c; /* standard färg variab */
         
 }
 
-.box1 {
+.box {
+    display:flex;
     display: block;
-        order: 1}
-.box2 {order: -2}
-.box3 {order: -3}
+    
+        }
+
 
 h1, h4
     {
         @include header-style;
         color: $standard+245%;
+    
     }
 
 
@@ -46,9 +48,10 @@ footer
 aside
     {        
         display: flex;
-        opacity:0.5;
+        opacity:0.8;
         background-color: white;
-        border: 2px solid brown;
+        border: 4px solid brown;
+        border-radius: 25px;
         padding:2px;
         color:black;
         text-align: center;
@@ -66,10 +69,10 @@ aside
     {
         
         color: $standard;
-        background: white;
+        
         text-decoration: none;
         padding: 10px;
-        font-size: 2em;
+        font-size: 3em;
         display: inline-block;
     }
 .ejmedlem
@@ -84,12 +87,12 @@ aside
     }
 body 
     { 
-        background-image: url("../images/background.jpg")	;	
+        background-image: url("../images/ackground.jpg")	;	
     	background-position: center center;
 		background-repeat:  no-repeat;
 		background-attachment: fixed;
 		background-size:  cover;
-		background-color: white;
+		background-color: #c9c9c9;
     }
 
 
@@ -101,8 +104,16 @@ li {
 
 header {
   display: flex;
-  justify-content: center
+  justify-content: center;
   
+}
+
+
+.fa-times,
+.fa-bars {
+  color: white;
+  font-size: 2em;
+  padding: 0.5em;
 }
 
 .fa-life-bouy,
@@ -110,8 +121,9 @@ header {
 .fa-home,
 .fa-facebook,
 .fa-cutlery {
-  font-size: 1em;
-  padding: 0.8em;
+  font-size: 1.5em;
+  padding: 0.4em;
+    color: aqua;
 }
 
 .logo {
@@ -119,20 +131,14 @@ header {
   align-items: baseline;
 }
 
-h1,
+
 h2 {
-  color: white;
+  color: $standard;
   font-size: 2em;
   color: pink;
     }
 
 
-.fa-times,
-.fa-bars {
-  color: white;
-  font-size: 3em;
-  padding: 0.5em;
-}
 
 #nav-toggle {
   display: none; /* dölj ch */
@@ -168,7 +174,7 @@ nav ul {
 }
 
 nav ul a {
-  font-size: 2em;
+  font-size: 4em;
   display: block;
   padding: 0.4em;
 }
@@ -197,14 +203,7 @@ nav > ul > li:hover > a {
     flex-flow: row wrap;
     justify-content: space-around;
   }
-  .fa-life-bouy,
-.fa-glass,
-.fa-home,
-.fa-facebook,
-.fa-cutlery {
-    font-size: 3em;
-    padding: 0.5em;
-  }
+  
   h1, h2, h4
     {
         @include header-style;
