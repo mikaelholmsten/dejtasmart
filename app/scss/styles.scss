@@ -1,35 +1,22 @@
 
-$standard:#ff4d6c; /* standard färg variab */
+$standard:#c9c9c9; /* standard färg variab */
 
 @mixin header-style { /*mixin */
   
-  font-size: 10px;
+    font-family:  sans-serif;
+    
+font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  color:$standard;
+  color: $standard;
     text-align:center;
         
 }
 
-.box {
-    display:flex;
-    display: block;
-    
-        }
-
-
-h1, h4
-    {
-        @include header-style;
-        color: $standard+245%;
-    
-    }
-
-
 @mixin footstyle 
     {
-
-        font-size: 1.2em;
+        font-family: 'Merienda One', cursive;
+        font-size: 1em;
         display: block;
         position:fixed;
         bottom:-12px;
@@ -40,49 +27,78 @@ h1, h4
         color:$standard;
     }
 
-footer 
+@mixin boxstyle
     {
-        @include footstyle;
+                
+        border: 2px solid black;
+        border-radius: 25px;
+        
+        
+    }
+.logo {font-family: 'Merienda One', cursive;}
+.box 
+    {
+        @include boxstyle;
+        display:flex;
+        display: block;
+        padding-bottom: 5px;
+        margin: 0.4em;
+        max-width: 850px;
+        background-color: white;
+        
+    }
+
+
+h1, h2, h3, h4
+    {
+    
+        @include header-style;
+        
+    }
+h2 {
+        color: $standard;
+        font-size: 2em;
+        color: pink;
     }
 
 aside
     {        
+        
         display: flex;
-        opacity:0.8;
+        opacity:0.9;
         background-color: white;
-        border: 4px solid brown;
-        border-radius: 25px;
-        padding:2px;
+        padding: 1px;
         color:black;
-        text-align: center;
+        text-align: left;
     }
 
 .medlem-text
     {
         font-size: 1.1em;
-        color: $standard+125%;
+        color: $standard;
         text-align:center;
         }
 
-
 .medlem
     {
-        
         color: $standard;
         
         text-decoration: none;
-        padding: 10px;
+        padding: 1px;
         font-size: 3em;
         display: inline-block;
+        
+        border-radius: 25px;
     }
+
 .ejmedlem
     {
         color: black;
         background: white;
-        opacity:0.95;
+        opacity:0.75;
         text-decoration: none;
-        padding: 50px;
-        display: inline-block;
+        padding: 5px;
+        display: flex;
         font-size: 4em;
     }
 body 
@@ -95,146 +111,139 @@ body
 		background-color: #c9c9c9;
     }
 
+ul, li 
+    {
+        list-style: none;
+    }
 
-ul,
-li {
-  list-style: none;
-}
+header 
+    {
+        display: flex;
+        justify-content: center;  
+    }
 
-
-header {
-  display: flex;
-  justify-content: center;
-  
-}
-
-
-.fa-times,
-.fa-bars {
-  color: white;
-  font-size: 2em;
-  padding: 0.5em;
-}
+.fa-times, .fa-bars
+    {
+        color: black;
+        font-size: 2em;
+        padding: 0.5em;
+    }
 
 .fa-life-bouy,
 .fa-glass,
 .fa-home,
 .fa-facebook,
-.fa-cutlery {
-  font-size: 1.5em;
-  padding: 0.4em;
-    color: aqua;
-}
+.fa-cutlery
+    {
+        font-size: 1,8em;
+        padding: 0.4em;
+        color: white;
+    }
 
-.logo {
-  display: center;
-  align-items: baseline;
-}
+.logo
+    {
+        font-family: 'Merienda One', cursive;
+        display: center;
+        align-items: baseline;
+        color: $standard;
+    }
 
+#nav-toggle
+    {
+        display: none; /* dölj ch */
+    }
 
-h2 {
-  color: $standard;
-  font-size: 2em;
-  color: pink;
+#nav-toggle:checked + #wrapper nav  
+    {
+        display: block; /* mobil meny cb checkad */    
+    }
+
+#nav-toggle:checked + #wrapper header .fa-bars 
+    {
+        display: block; /* visar hamburg ch checkad */
+    }
+
+nav
+    {
+        display: none; /* dold mobilmeny */
+    }
+
+nav ul
+    {
+        text-align: center;
+        background-color: #f89090;
+        display: flex;
+        flex-flow: column wrap; /* mobil meny kolumn*/
+        font-size: 1em;
+        display: block;
+        padding: 0.4em;
+    }
+
+.search-form 
+    {
+        display: none;
+    }
+
+footer 
+    {
+        @include footstyle;
     }
 
 
-
-#nav-toggle {
-  display: none; /* dölj ch */
-}
-
-
-#nav-toggle:checked + #wrapper nav {
-  display: block; /* mobil meny cb checkad */
-    
-    
-    
-}
-
-#nav-toggle:checked + #wrapper header .fa-bars {
-  display: block; /* visar hamburg ch checkad */
-
-}
-
-
-nav {
-  display: none; /* dold mobilmeny */
-
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-color: #f89090;
-  display: flex;
-  flex-flow: column wrap; /* mobil meny kolumn*/
-
-}
-
-nav ul a {
-  font-size: 4em;
-  display: block;
-  padding: 0.4em;
-}
-
-nav > ul > li:hover > a {
-  background: #e4e4e4;
-  color: #92b4f2;
-}
-
-.search-form {
-  display: none;
-}
 
 @media all and (min-width: 630px) {
   /* Döljer meny trigger för desktop */
   
-  header > label {
-    display: none;
-  }
-  /* visar menyn för desktop */
-  
-  nav {
-    display: block;
-  }
-  nav ul {
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-  
-  h1, h2, h4
+header > label 
     {
-        @include header-style;
-        color: $standard+45%;
-        font-size: +25%;
+        display: none;
     }
-  .search-form {
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 5px;
-    order:99;
-  }
-  .search {
-    padding: 8px 15px;
-    background: #e0e0f5;
-    border: 0px solid #dbdbdb;
-    color: white;
-  }
-  .button {
-    position: relative;
-    padding: 6px 15px;
-    left: -8px;
-    border: 2px solid #207cca;
-    background-color: #207cca;
-    color: #fafafa;
-  }
-    
-    .ejmedlem
+    /* visar menyn för desktop */
+nav 
     {
+        display: block;
+    }
+
+nav ul
+    
+    {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        background-color: #84f4d1;
+    }
+      
+.search-form
+    {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 5px;
+        order:99;
+    }
+
+.search 
+    {
+        padding: 8px 15px;
+        background: #e0e0f5;
+        border: 1px solid $standard;
+        color: $standard;
+    }
+  
+.button
+    {
+        position: relative;
+        padding: 6px 15px;
+        left: -8px;
+        border: 2px solid #207cca;
+        background-color: #207cca;
+        color: #fafafa;
+    }
+    
+.ejmedlem
+    {
+        
         color: black;
         background: white;
         opacity:0.91;
@@ -243,14 +252,7 @@ nav > ul > li:hover > a {
         padding: 2px;
         display: inline-block;
     }
-    .box2 {display: flex;
-        order: 1}
-    .box3
-    {
-        display: flex;
-    order: 2;
-    }
-    
-    
+    .box2 {order: 3}
+    .box3 {order: -4}
     
 }
