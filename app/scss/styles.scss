@@ -14,6 +14,8 @@ $color:#fdfdfd;
     font-family: 'Merienda One', cursive;        
 }
 
+a {color: inherit;} /*ta bort a tagg länk färg*/
+
 h1, h2, h3, h4
     {
     
@@ -44,7 +46,7 @@ h1, h2, h3, h4
 
 @mixin boxstyle
     {
-        padding: 20px;     
+        padding: 2%;     
         border: 1px solid black;
         border-radius: $border-std;
         opacity:0.94;
@@ -95,7 +97,7 @@ aside
     {
         font-size: 1.1em; /* i box tre för målgrupp 2 icke medlemmar*/
         color: $standard;
-        text-align:left;
+        text-align:center;
         }
 
 .medlem         /* medlem inlog*/
@@ -104,7 +106,7 @@ aside
         
         text-decoration: none;
         padding: 0.5px;
-        font-size: 1em;
+        font-size: 0.8em;
         display: inline-block;
         background-color: blue;
         border-radius: $border-std;
@@ -135,6 +137,7 @@ body
 
 header 
     {
+        max-height: 91px;
         display: flex;
         justify-content: space-around;  
     }
