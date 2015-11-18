@@ -1,12 +1,13 @@
 
 $standard:#b7b7b7; /* standard färg variab */
 $border-std: 8px; /* border radius variabel*/
+$color:#fdfdfd;
 
-@mixin header-style { /*mixin för headern*/
+@mixin header-style($color) { /*mixin för headern*/
   
   font-weight: bold;
   text-transform: none;
-  color: white;
+  color: $color;
     text-align:center;
     justify-content: space-between;
     align-items: baseline;
@@ -16,7 +17,7 @@ $border-std: 8px; /* border radius variabel*/
 h1, h2, h3, h4
     {
     
-        @include header-style;
+        @include header-style($color);
         border-radius: $border-std;
     }
 
@@ -38,7 +39,7 @@ h1, h2, h3, h4
         width:100%;
         background-color:black;
         text-align: center;
-        color:white;
+        color:$color;
     }
 
 @mixin boxstyle
@@ -66,8 +67,10 @@ h1, h2, h3, h4
 
 background-color: yellow;
 }
-
-
+h3 {font-size: 1.5em;}
+h3, h4 {
+    color: black;
+}
 h2 {
         
     background-color: #f57b7b;
@@ -78,10 +81,11 @@ h2 {
 aside
     {        
         order: 1;
+        
         display: flex;
         opacity:0.9;
         background-color: white;
-        padding: 20px;
+        padding: 2px;
         color:black;
         text-align: left;
     }
@@ -89,31 +93,31 @@ aside
 
 .medlem-text
     {
-        font-size: 1em;
+        font-size: 1.1em; /* i box tre för målgrupp 2 icke medlemmar*/
         color: $standard;
-        text-align:center;
+        text-align:left;
         }
 
-.medlem
+.medlem         /* medlem inlog*/
     {
         color: $standard;
         
         text-decoration: none;
-        padding: 1px;
-        font-size: 3em;
+        padding: 0.5px;
+        font-size: 1em;
         display: inline-block;
         background-color: blue;
         border-radius: $border-std;
     }
 
-.ejmedlem
+.ejmedlem    /* locktext för prio2 Gratis biobiljetter*/
     {
         color: black;
         background: white;
         opacity:0.75;
         text-decoration: none;
         padding: 5px;
-        display: flex;
+        
         font-size: 4em;
     }
 
@@ -158,10 +162,8 @@ header
     {
         font-family: 'Merienda One', cursive;
         display: flex;
-        
-        font-size: 1.6em;
-       
-        color: $standard;
+       font-size: 1.6em;
+       color: $standard;
     }
 
 #nav-toggle
@@ -182,21 +184,23 @@ header
         display: block; /* visar hamburg ch checkad */
     }
 
-nav
+nav    /* nästat in lite kod*/
+{
+    display: none; /* dold mobilmeny */
+ul
     {
-        display: none; /* dold mobilmeny */
-    }
-
-nav ul
-    {
+        text-decoration: none;
+        list-style-type: none;
         text-align: left;
         background-color: $standard;
         display: flex;
         flex-flow: column wrap; /* mobil meny kolumn*/
         font-size: 1.4em;
         display: block;
-        padding: 10px;
+        padding: 0;
+        margin: 0;
     }
+}
 
 .search-form 
     {
@@ -217,6 +221,7 @@ footer
         
         flex-flow: nowrap;
     }
+    
     .box1 {order: -1;}
     .box3 {order: 3;}
     header > label 
@@ -262,7 +267,7 @@ ul
         left: -2%;
         border: 2px solid white;
         background-color: white;
-        color: #fafafa;
+        color: black;
     }
     
 .ejmedlem
