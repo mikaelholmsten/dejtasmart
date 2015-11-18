@@ -1,26 +1,29 @@
 
 $standard:#b7b7b7; /* standard färg variab */
+$border-std: 8px; /* border radius variabel*/
 
-@mixin header-style { /*mixin */
+@mixin header-style { /*mixin för headern*/
   
-    
-
   font-weight: bold;
   text-transform: none;
   color: white;
     text-align:center;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'Merienda One', cursive;
-    
-    
-        
+    font-family: 'Merienda One', cursive;        
 }
 
-.container{ display: flex;
+h1, h2, h3, h4
+    {
+    
+        @include header-style;
+        border-radius: $border-std;
+    }
+
+.container
+    { display: flex;
      flex-flow: column;
-        
-}
+    }
 
 
 
@@ -42,7 +45,7 @@ $standard:#b7b7b7; /* standard färg variab */
     {
         padding: 20px;     
         border: 1px solid black;
-        border-radius: 10px;
+        border-radius: $border-std;
         opacity:0.94;
         
     }
@@ -65,13 +68,6 @@ background-color: yellow;
 }
 
 
-h1, h2, h3, h4
-    {
-    
-        @include header-style;
-        border-radius: 5px;
-        
-    }
 h2 {
         
     background-color: #f57b7b;
@@ -104,10 +100,10 @@ aside
         
         text-decoration: none;
         padding: 1px;
-        font-size: 1em;
+        font-size: 3em;
         display: inline-block;
-        
-        border-radius: 25px;
+        background-color: blue;
+        border-radius: $border-std;
     }
 
 .ejmedlem
@@ -120,6 +116,7 @@ aside
         display: flex;
         font-size: 4em;
     }
+
 body 
     { 
         background-image: url("../images/background.jpg")	;	
@@ -227,20 +224,19 @@ footer
         display: none;
     }
     /* visar menyn för desktop */
-nav 
-    {
-        display: block;
-    }
 
-nav ul
-    
+nav 
+{
+        display: block;
+ul
     {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
         background-color: $standard;
     }
-      
+}
+
 .search-form
     {
         display: block;
